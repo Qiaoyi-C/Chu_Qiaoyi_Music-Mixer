@@ -1,0 +1,36 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	width: 1080px;
+	margin: 0 auto;
+}
+#dropzone {
+	display: flex;
+	flex-direction: row;
+	margin-left: 17%;
+	position: absolute;
+	top: 10%;	
+}
+.box {
+	width: 220px;
+	height: 280px;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	z-index: 1;
+	flex: 1 1 0;
+}
+
+.musicalzone{
+    background-image: url(images/musical.png);
+}
+
+.musicalzone img {
+	margin-left: 180px;
+	width: 84%;
+	height: 600px;
+}
