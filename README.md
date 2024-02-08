@@ -4,8 +4,8 @@ This is a symphony concert. The audience can choose their favorite instruments a
 
 
 ## Source
-images - pinterest, pixabay
-audio - pixabay
+**Images** pinterest, pixabay
+**Audio** pixabay
 
 ## Installation
 
