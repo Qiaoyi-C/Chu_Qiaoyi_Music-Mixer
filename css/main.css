@@ -21,22 +21,39 @@ img{
 	font-size: 20px;
 }
 
-
 #dropzone{
 	background-image: url("../images/background.png");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	height: 500px;
-	background-position: center;
-
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
+.box-con{
+	display: flex;
+	justify-content: center;
+	width:100%;
+}
 
-
+.box{
+	width: 200px;
+	height: 200px;
+	margin: 24px;
+	background-image: url("../images/musical.svg");
+	background-repeat: no-repeat;
+	
+}
 
 .part2{
 	background-color: #ffc7cf;
 	
+}
+
+.controllers{
+	text-align: right;
+	margin: 16px;
 }
 
 .rwbutton, .pausebutton{
@@ -49,29 +66,5 @@ img{
 	margin: 4px 2px;
 	cursor: pointer;
 	border: 2px solid black;
-	border-radius:8%;
-}
-
-
-
-
-.box, .box2{
-	width: 200px;
-	height: 200px;
-	background-image: url("../images/musical.svg");
-	
-}
-
-
-
-.box {
-	width: 100px;
-	height: 100px;	
-}
-
-.box2 {
-	position: relative;
-	width: 200px;
-	height: 200px;
-	left: 300px;
+	border-radius: 50px;
 }
