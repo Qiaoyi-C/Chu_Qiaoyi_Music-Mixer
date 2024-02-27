@@ -1,26 +1,44 @@
+let dropZone = document.querySelectorAll('.box'),
+	instrument = document.querySelectorAll('.instrument'),
+	pausebutton = document.querySelector('.pausebutton'),
+	rwbutton = document.querySelector('.rwbutton'),
+	music = document.querySelectorAll('.music');
+    let draggedPiece;
 
-var box2 = document.querySelector('.box2');
-
-box2.ondragenter = function () {
-    console.log("Start dragging object!");
+function startedDragging() {
+    console.log("dragStart called");
+    draggedPiece = this;
+ }
+        
+function draggedOver(e) {
+    console.log("draggedOver called");
+    e.preventDefault();
+    
+}
+        
+function dropped(e) {
+    console.log("item was dropped");
+    e.preventDefault();
+    let dropZone = this;
+    dropZone.innerHTML = ''; 
+    dropZone.appendChild(draggedPiece.cloneNode(true)); 
+    let instrumentIndex = Array.from(instrument).indexOf(draggedPiece);
+    if (instrumentIndex !== -1) {
+        music[instrumentIndex].play();
+    }
 }
 
+instrument.forEach(instrument => {
+    instrument.addEventListener("dragstart", startedDragging);
+});
 
-box2.ondragleave = function () {
-
-    console.log("The object crossed the box and did not land in the box.");
-}
-
-
-box2.ondragover = function (e) {
-
-    e.preventDefault(); 
-
-    console.log("Drag ends");
-    console.log("***************");
-}
+dropZone.forEach(dropZone => {
+    dropZone.addEventListener("dragover", draggedOver);
+    dropZone.addEventListener("drop", dropped);
+});
 
 
-box2.ondrop = function () {
-    console.log("The drag target passes over the placement object and is not placed in the placement object.");
-}
+
+
+
+
