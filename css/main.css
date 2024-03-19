@@ -56,7 +56,7 @@ img{
 	margin: 16px;
 }
 
-.rwbutton, .pausebutton{
+.rebutton, .pausebutton{
 	background-color: rgb(255, 255, 255);
 	padding: 10px 20px;
 	text-align: center;
