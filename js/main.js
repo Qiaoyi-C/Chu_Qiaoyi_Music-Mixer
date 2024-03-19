@@ -1,7 +1,7 @@
 let dropZone = document.querySelectorAll('.box'),
 	instrument = document.querySelectorAll('.instrument'),
 	pausebutton = document.querySelector('.pausebutton'),
-	rwbutton = document.querySelector('.rwbutton'),
+	rebutton = document.querySelector('.rebutton'),
 	music = document.querySelectorAll('.music');
     let draggedPiece;
 
@@ -26,6 +26,27 @@ function dropped(e) {
     if (instrumentIndex !== -1) {
         music[instrumentIndex].play();
     }
+    
+    draggedPiece.style.visibility = 'hidden';
+}
+
+function restartAudio() { 
+    music.forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+    });
+    
+    instrument.forEach(inst => {
+        inst.style.top = '0px'; 
+        inst.style.left = '0px'; 
+        document.querySelector('.originalPosition').appendChild(inst);
+    });
+}
+
+function pauseAudio() { 
+    music.forEach(audio => {
+        audio.pause(); 
+    });
 }
 
 instrument.forEach(instrument => {
@@ -37,6 +58,10 @@ dropZone.forEach(dropZone => {
     dropZone.addEventListener("drop", dropped);
 });
 
+rebutton.addEventListener('click', function() {
+    window.location.href = window.location.href; 
+});
+pausebutton.addEventListener('click', pauseAudio);
 
 
 
