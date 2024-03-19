@@ -21,20 +21,16 @@ img{
 	font-size: 20px;
 }
 
-#dropzone{
-	background-image: url("../images/background.png");
-	background-repeat: no-repeat;
-	background-size: 100%;
-	height: 500px;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-}
 
-.box-con{
-	display: flex;
+#dropzone {
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover; /* 讓背景圖片填滿容器 */
+    height: 500px;
+    display: flex;
 	justify-content: center;
-	width:100%;
+	align-items: center;
+    flex-wrap: wrap;
 }
 
 .box{
@@ -67,4 +63,28 @@ img{
 	cursor: pointer;
 	border: 2px solid black;
 	border-radius: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    .box {
+        width: calc(50% - 32px); 
+        margin: 16px; 
+    }
+
+	#dropzone {
+        display: flex;
+		height: auto;
+        align-items: center; /* 水平居中子元素 */
+    }
+
+}
+
+@media only screen and (min-width: 769px) {
+
+    .box {
+        width: calc(33.33% - 32px); 
+        margin: 16px auto;
+    }
+	
+
 }
